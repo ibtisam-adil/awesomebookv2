@@ -12,74 +12,77 @@ import {
   handleListLinkClick,
 } from "./modules/eventlisteners.js";
 
+import BookManagement from "./modules/bookmanagement.js";
 
-class books {
-  constructor() {
-    this.booksData = [];
+const book = new BookManagement()
 
-    this.addBook = addBook;
-    this.booksAdded = booksAdded;
+// class books {
+//   constructor() {
+//     this.booksData = [];
 
-    this.addBook.addEventListener("submit", (e) => {
-      e.preventDefault();
+//     this.addBook = addBook;
+//     this.booksAdded = booksAdded;
 
-      this.title = this.addBook.querySelector(
-        'input[type="text"][placeholder="Title"]'
-      ).value;
+//     this.addBook.addEventListener("submit", (e) => {
+//       e.preventDefault();
 
-      this.author = this.addBook.querySelector(
-        'input[type="text"][placeholder="Author"]'
-      ).value;
+//       this.title = this.addBook.querySelector(
+//         'input[type="text"][placeholder="Title"]'
+//       ).value;
 
-      this.addBooks();
-    });
-  }
+//       this.author = this.addBook.querySelector(
+//         'input[type="text"][placeholder="Author"]'
+//       ).value;
 
-  addBooks() {
-    let newBook = {
-      title: this.title,
-      author: this.author,
-    };
+//       this.addBooks();
+//     });
+//   }
 
-    this.booksData.push(newBook);
+//   addBooks() {
+//     let newBook = {
+//       title: this.title,
+//       author: this.author,
+//     };
 
-    this.renderbooks();
-  }
+//     this.booksData.push(newBook);
 
-  removeBook(e) {
-    this.booksData = this.booksData.filter((a, index) => {
-      return index !== parseInt(e.target.id);
-    });
-    this.renderbooks();
-  }
+//     this.renderbooks();
+//   }
 
-  renderbooks() {
-    this.booksAdded.innerHTML = this.booksData
-      .map((bookData, index) => {
-        return `
-          <div class="books">
-              <div class="title-author">
-                  <p class="title">"${bookData.title}"</p>
-                  <p>by</p>
-                  <p class="author">${bookData.author}</p>
-              </div>
-              <button class="remove-btn" id="${index}">remove</button>
-          </div> `;
-      })
-      .join("");
-    const removebtn = document.querySelectorAll(".remove-btn");
-    removebtn.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        this.removeBook(e);
-      });
-    });
+//   removeBook(e) {
+//     this.booksData = this.booksData.filter((a, index) => {
+//       return index !== parseInt(e.target.id);
+//     });
+//     this.renderbooks();
+//   }
 
-    this.booksAdded.style.display =
-      this.booksData.length === 0 ? "none" : "block";
-  }
-}
+//   renderbooks() {
+//     this.booksAdded.innerHTML = this.booksData
+//       .map((bookData, index) => {
+//         return `
+//           <div class="books">
+//               <div class="title-author">
+//                   <p class="title">"${bookData.title}"</p>
+//                   <p>by</p>
+//                   <p class="author">${bookData.author}</p>
+//               </div>
+//               <button class="remove-btn" id="${index}">remove</button>
+//           </div> `;
+//       })
+//       .join("");
+//     const removebtn = document.querySelectorAll(".remove-btn");
+//     removebtn.forEach((btn) => {
+//       btn.addEventListener("click", (e) => {
+//         this.removeBook(e);
+//       });
+//     });
 
-const muneeb = new books();
+//     this.booksAdded.style.display =
+//       this.booksData.length === 0 ? "none" : "block";
+//   }
+// }
+
+// const muneeb = new books();
 
 listlink.addEventListener("click", handleListLinkClick);
 contactlink.addEventListener("click", handleContactLinkClick);

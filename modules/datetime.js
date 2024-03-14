@@ -2,7 +2,6 @@
 import { datetime } from "./navigation.js";
 import { DateTime } from "https://cdn.skypack.dev/luxon";
 
-console.log(datetime)
 const dt = DateTime.now();
 
 function displaydatetime() {
