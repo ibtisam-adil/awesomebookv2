@@ -1,17 +1,18 @@
+// eslint-disable-next-line no-unused-vars
+
 import {
   listlink,
   addlink,
   contactlink,
   addBook,
   booksAdded,
-} from "./modules/navigation.js";
+} from './modules/navigation.js';
 
 import {
   handleAddLinkClick,
   handleContactLinkClick,
   handleListLinkClick,
-} from "./modules/eventlisteners.js";
-
+} from './modules/eventlisteners.js';
 
 class books {
   constructor() {
@@ -20,15 +21,15 @@ class books {
     this.addBook = addBook;
     this.booksAdded = booksAdded;
 
-    this.addBook.addEventListener("submit", (e) => {
+    this.addBook.addEventListener('submit', (e) => {
       e.preventDefault();
 
       this.title = this.addBook.querySelector(
-        'input[type="text"][placeholder="Title"]'
+        'input[type="text"][placeholder="Title"]',
       ).value;
 
       this.author = this.addBook.querySelector(
-        'input[type="text"][placeholder="Author"]'
+        'input[type="text"][placeholder="Author"]',
       ).value;
 
       this.addBooks();
@@ -36,7 +37,7 @@ class books {
   }
 
   addBooks() {
-    let newBook = {
+    const newBook = {
       title: this.title,
       author: this.author,
     };
@@ -47,16 +48,13 @@ class books {
   }
 
   removeBook(e) {
-    this.booksData = this.booksData.filter((a, index) => {
-      return index !== parseInt(e.target.id);
-    });
+    this.booksData = this.booksData.filter((a, index) => index !== parseInt(e.target.id));
     this.renderbooks();
   }
 
   renderbooks() {
     this.booksAdded.innerHTML = this.booksData
-      .map((bookData, index) => {
-        return `
+      .map((bookData, index) => `
           <div class="books">
               <div class="title-author">
                   <p class="title">"${bookData.title}"</p>
@@ -64,24 +62,21 @@ class books {
                   <p class="author">${bookData.author}</p>
               </div>
               <button class="remove-btn" id="${index}">remove</button>
-          </div> `;
-      })
-      .join("");
-    const removebtn = document.querySelectorAll(".remove-btn");
+          </div> `)
+      .join('');
+    const removebtn = document.querySelectorAll('.remove-btn');
     removebtn.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+      btn.addEventListener('click', (e) => {
         this.removeBook(e);
       });
     });
 
-    this.booksAdded.style.display =
-      this.booksData.length === 0 ? "none" : "block";
+    this.booksAdded.style.display = this.booksData.length === 0 ? 'none' : 'block';
   }
 }
 
 const muneeb = new books();
 
-listlink.addEventListener("click", handleListLinkClick);
-contactlink.addEventListener("click", handleContactLinkClick);
-addlink.addEventListener("click", handleAddLinkClick);
-
+listlink.addEventListener('click', handleListLinkClick);
+contactlink.addEventListener('click', handleContactLinkClick);
+addlink.addEventListener('click', handleAddLinkClick);
