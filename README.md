@@ -58,7 +58,7 @@ The "AwesomeBook" project is a web application designed to manage a virtual book
 
 ## 🚀 Live Demo <a name="To-do List"></a>
 
-https://awesomebookv2.netlify.app/
+https://awesomebooksv2.netlify.app/
 This is live version of my protfolio project.you can click on this link to watch live demo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -89,11 +89,11 @@ Step 2: Locate the folder where you cloned your project to and open the `index.h
 
 ## 👥 Author <a name="authors"></a>
 
-👤 **Muneeb UR Rehman**
+👤 **Ibtisam Adil**
 
 - GitHub: [@ibtisam-adil](https://github.com/ibtisam-adil)
-- Twitter: [@Hafizabd4](https://twitter.com/Hafizabd4)
-- LinkedIn: (https://www.linkedin.com/in/ibtisamadildev)
+- Twitter: [@ibtisam__adil](https://twitter.com/Ibtisam__adil)
+- LinkedIn: [ibtisamadildev](https://www.linkedin.com/in/ibtisamadildev)
 
 <!-- FUTURE FEATURES -->
 
